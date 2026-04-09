@@ -1,0 +1,11 @@
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\bin\Debug\net8.0\TechNotes.domain.deps.json
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\bin\Debug\net8.0\TechNotes.domain.dll
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\bin\Debug\net8.0\TechNotes.domain.pdb
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.GeneratedMSBuildEditorConfig.editorconfig
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.AssemblyInfoInputs.cache
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.AssemblyInfo.cs
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.csproj.CoreCompileInputs.cache
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.dll
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\refint\TechNotes.domain.dll
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\TechNotes.domain.pdb
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.domain\obj\Debug\net8.0\ref\TechNotes.domain.dll
