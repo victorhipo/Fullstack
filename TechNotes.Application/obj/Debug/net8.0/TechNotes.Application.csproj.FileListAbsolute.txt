@@ -13,3 +13,4 @@ E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechN
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\refint\TechNotes.Application.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.pdb
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\ref\TechNotes.Application.dll
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.sourcelink.json

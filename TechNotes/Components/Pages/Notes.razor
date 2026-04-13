@@ -20,7 +20,7 @@
     protected override async Task OnInitializedAsync()
     {
         await Task.Delay(1000);
-        var result = NoteService.GetAllNotes();
+        var result = await NoteService.GetAllNotesAsync();
         if(result is not null)
         {
             notes = result.ToList();
