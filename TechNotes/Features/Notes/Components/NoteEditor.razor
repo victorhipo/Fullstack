@@ -1,0 +1,121 @@
+﻿@page "/note-editor"
+@page "/note-editor/{NoteId:int}"
+
+
+@inject ISender sender
+@inject NavigationManager NavigationManager
+
+@if (isEditMode && Note is not null)
+{
+    <PageTitle>Editar nota</PageTitle>
+    <p>Editando nota con el título: @Note.Title</p>
+    <h3>Editar nota</h3>
+    <a href="/notes" class="btn btn-secondary mb-2">Volver a notas</a>
+
+}
+else
+{
+    <PageTitle>Crear nota</PageTitle>
+    <h3>Crear nota</h3>
+}
+
+@if (Note is not null)
+{
+    @*
+    <!-- Formulario de edición para crear una nueva nota -->
+    <!-- EditForm maneja el envío del formulario y valida el modelo -->
+    <!-- Model="Note" vincula el formulario al modelo Note -->
+    <!-- OnSubmit="HandleSubmit" especifica el método a llamar al enviar -->
+    <!-- FormName="NoteEditorForm" asigna un nombre único al formulario --> 
+    *@
+    <EditForm Model="Note" OnSubmit="HandleSubmit" FormName="NoteEditorForm">
+        @* <!-- Campo de entrada de texto para el título de la nota --> *@
+        @* <!-- @bind-Value="Note.Title" vincula el valor del input al título del modelo --> *@
+        <InputText @bind-Value="Note.Title" placeholder="Título" class="form-control mb-2" />
+        <InputTextArea @bind-Value="Note.Content" placeholder="Contenido" class="form-control mb-2" rows="5" />
+        <label>Fecha de publicación:</label>
+        <InputDate @bind-Value="Note.PublishedAt" class="form-control mb-2" />
+        <label class="form-check-lable mb-2">Publicado:</label>
+        <InputCheckbox @bind-Value="Note.IsPublished" class="form-check-input mb2" />
+        <button type="submit" class="btn btn-primary mt-3 w-100">@(isEditMode ? "Editar" : "Crear")</button>
+    </EditForm>
+    @if (isEditMode)
+    {
+        <form @onsubmit="DeleteNote" @formname="DeleteNoteForm" method="POST">
+            <button type="submit" class="btn btn-danger mt-2">Borrar nota</button>
+            <AntiforgeryToken />
+        </form>
+    }
+    
+}
+
+
+@code {
+    private bool isEditMode => NoteId != null;
+    [SupplyParameterFromForm]
+    private NoteModel? Note { get; set; }
+
+    [Parameter]
+    public int? NoteId { get; set; }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (NoteId is not null)
+        {
+            var result = await sender.Send(new GetNoteByIdQuery { Id = (int)NoteId });
+            if (result is not null)
+            {
+                Note ??= result.Adapt<NoteModel>();
+                Note.Id = (int)NoteId;
+            }
+        }
+        else
+        {
+            Note ??= new();
+        }
+    }
+
+    /// <summary>
+    /// Método que se ejecuta cuando se envía el formulario.
+    /// Convierte el modelo Note a un comando CreateNoteCommand usando Mapster,
+    /// envía el comando a través del mediador ISender,
+    /// y actualiza el modelo con el resultado.
+    /// </summary>
+    private async Task HandleSubmit()
+    {
+        if (isEditMode)
+        {
+            var command = Note.Adapt<UpdateNoteCommand>();
+            var result = await sender.Send(command);
+            if (result is not null)
+            {
+                Note = result.Adapt<NoteModel>();
+            }
+            Console.WriteLine("Nota actualizada correctanmente.");
+        }
+        else
+        {
+            // Adaptar el modelo Note a un comando CreateNoteCommand
+            var command = Note.Adapt<CreateNoteCommand>();
+            var result = await sender.Send(command);
+            Note = result.Adapt<NoteModel>();
+            Console.WriteLine("Nota creada correctanmente.");
+        }
+        
+    }
+    private async Task DeleteNote(){
+        if(NoteId is null) return;
+        
+        var command = new DeleteNoteCommand{ Id = (int)NoteId };
+        var isSucces = await sender.Send(command);
+        if(isSucces)
+        {
+            Console.WriteLine("Nota eliminada correctamente.");
+            NavigationManager.NavigateTo("/notes");
+        }
+        else
+        {
+            Console.WriteLine("Error al eliminar la nota.");
+        }
+    }
+}

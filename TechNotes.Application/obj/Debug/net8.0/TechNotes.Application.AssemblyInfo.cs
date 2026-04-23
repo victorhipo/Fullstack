@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TechNotes.Application")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a2178eee1ba00fb195e871a95842fb3d4f4cfb0e")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b6f09510548c5a2c3bc947e29c63b7a806f95d9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("TechNotes.Application")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TechNotes.Application")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -8,9 +8,9 @@ E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechN
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.AssemblyInfoInputs.cache
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.AssemblyInfo.cs
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.csproj.CoreCompileInputs.cache
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.sourcelink.json
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNote.697A0D8E.Up2Date
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\refint\TechNotes.Application.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.pdb
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\ref\TechNotes.Application.dll
-E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Application\obj\Debug\net8.0\TechNotes.Application.sourcelink.json

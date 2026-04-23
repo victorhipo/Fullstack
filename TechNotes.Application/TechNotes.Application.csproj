@@ -13,7 +13,10 @@
   <ItemGroup>
     <Folder Include="Notes\" />
     <Folder Include="Notes\CreateNote\" />
+    <Folder Include="Notes\DeleteNote\" />
+    <Folder Include="Notes\GetNoteById\" />
     <Folder Include="Notes\GetNotes\" />
+    <Folder Include="Notes\UpdateNote\" />
   </ItemGroup>
 
   <ItemGroup>

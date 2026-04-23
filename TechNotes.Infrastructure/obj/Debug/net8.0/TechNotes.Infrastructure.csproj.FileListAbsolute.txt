@@ -1,4 +1,5 @@
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Infrastructure.deps.json
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Infrastructure.runtimeconfig.json
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Infrastructure.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Infrastructure.pdb
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Application.dll
@@ -10,11 +11,10 @@ E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\Te
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.AssemblyInfoInputs.cache
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.AssemblyInfo.cs
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.csproj.CoreCompileInputs.cache
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.sourcelink.json
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNote.8FBF7FC1.Up2Date
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\refint\TechNotes.Infrastructure.dll
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.pdb
-E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\ref\TechNotes.Infrastructure.dll
-E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\bin\Debug\net8.0\TechNotes.Infrastructure.runtimeconfig.json
 E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.genruntimeconfig.cache
-E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\TechNotes.Infrastructure.sourcelink.json
+E:\Cursos\C#\C# + Blazord\Fullstack\TechNotes.Infrastructure\obj\Debug\net8.0\ref\TechNotes.Infrastructure.dll
