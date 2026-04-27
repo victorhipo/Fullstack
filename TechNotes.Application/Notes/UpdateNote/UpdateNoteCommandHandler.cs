@@ -1,11 +1,6 @@
-using System;
-using Mapster;
-using MediatR;
-using TechNotes.domain.Notes;
-
 namespace TechNotes.Application.Notes.UpdateNote;
 
-public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, NoteResponse?>
+public class UpdateNoteCommandHandler : ICommandHandler<UpdateNoteCommand, NoteResponse?>
 {
     private readonly INoteRepository _noteRepository;
 
@@ -15,11 +10,11 @@ public class UpdateNoteCommandHandler : IRequestHandler<UpdateNoteCommand, NoteR
         _noteRepository = noteRepository;
     }
 
-    public async Task<NoteResponse?> Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
+    public async Task<Result<NoteResponse?>> Handle(UpdateNoteCommand request, CancellationToken cancellationToken)
     {
         var noteToUpdate = request.Adapt<Note>();
         var UpdateNote = await _noteRepository.UpdateNoteAsync(noteToUpdate);
-        if(UpdateNote is null) return null;
+        if(UpdateNote is null) return Result.Fail<NoteResponse?>("Nota no encontrada o no se pudo actualizar la nota");
         return UpdateNote.Adapt<NoteResponse>();
     }
 }

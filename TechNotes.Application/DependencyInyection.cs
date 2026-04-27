@@ -1,6 +1,5 @@
-using System;
 using Microsoft.Extensions.DependencyInjection;
-using TechNotes.Application.Notes;
+
 
 namespace TechNotes.Application;
 

@@ -48,10 +48,11 @@ else
     }
     
 }
-
+<span class="text-danger">@errorMessage</span>
 
 @code {
     private bool isEditMode => NoteId != null;
+    private string errorMessage = string.Empty;
     [SupplyParameterFromForm]
     private NoteModel? Note { get; set; }
 
@@ -63,10 +64,14 @@ else
         if (NoteId is not null)
         {
             var result = await sender.Send(new GetNoteByIdQuery { Id = (int)NoteId });
-            if (result is not null)
+            if (result.IsSuccessful)
             {
-                Note ??= result.Adapt<NoteModel>();
+                Note ??= result.Value.Adapt<NoteModel>();
                 Note.Id = (int)NoteId;
+            }
+            else
+            {
+                SetErrorMessage(result.ErrorMessage);
             }
         }
         else
@@ -87,28 +92,42 @@ else
         {
             var command = Note.Adapt<UpdateNoteCommand>();
             var result = await sender.Send(command);
-            if (result is not null)
+            if (result.IsSuccessful)
             {
-                Note = result.Adapt<NoteModel>();
+                Note = result.Value.Adapt<NoteModel>();
+                Console.WriteLine("Nota actualizada correctanmente.");
+                NavigationManager.NavigateTo("/notes");
             }
-            Console.WriteLine("Nota actualizada correctanmente.");
+            else
+            {
+                SetErrorMessage(result.ErrorMessage);
+            }
+
         }
         else
         {
             // Adaptar el modelo Note a un comando CreateNoteCommand
             var command = Note.Adapt<CreateNoteCommand>();
             var result = await sender.Send(command);
-            Note = result.Adapt<NoteModel>();
-            Console.WriteLine("Nota creada correctanmente.");
+            if (result.IsSuccessful)
+            {
+                Note = result.Adapt<NoteModel>();
+                Console.WriteLine("Nota creada correctanmente.");
+            }
+            else
+            {
+                SetErrorMessage(result.ErrorMessage);
+            }
         }
         
     }
-    private async Task DeleteNote(){
-        if(NoteId is null) return;
+    private async Task DeleteNote()
+    {
+        if (NoteId is null) return;
         
-        var command = new DeleteNoteCommand{ Id = (int)NoteId };
-        var isSucces = await sender.Send(command);
-        if(isSucces)
+        var command = new DeleteNoteCommand { Id = (int)NoteId };
+        var result = await sender.Send(command);
+        if (result.IsSuccessful)
         {
             Console.WriteLine("Nota eliminada correctamente.");
             NavigationManager.NavigateTo("/notes");
@@ -117,5 +136,9 @@ else
         {
             Console.WriteLine("Error al eliminar la nota.");
         }
+    }
+    private void SetErrorMessage(string? error)
+    {
+        errorMessage = error ?? string.Empty;
     }
 }
