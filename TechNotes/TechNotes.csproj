@@ -14,4 +14,10 @@
       <ProjectReference Include="..\TechNotes.Infrastructure\TechNotes.Infrastructure.csproj" />
     </ItemGroup>
 
+
+  <Target Name="BuildTailwind" BeforeTargets="Build">
+    <Exec Command="npx @tailwindcss/cli -i Styles/input.css -o wwwroot/tailwind.css --minify"
+          WorkingDirectory="$(MSBuildProjectDirectory)" />
+  </Target>
+
 </Project>
