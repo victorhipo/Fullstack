@@ -7,6 +7,7 @@
   </PropertyGroup>
 
     <ItemGroup>
+    <Folder Include="Features\Notes\Services\" />
     <Folder Include="Notes\" />
   </ItemGroup>
 
@@ -16,8 +17,7 @@
 
 
   <Target Name="BuildTailwind" BeforeTargets="Build">
-    <Exec Command="npx @tailwindcss/cli -i Styles/input.css -o wwwroot/tailwind.css --minify"
-          WorkingDirectory="$(MSBuildProjectDirectory)" />
+    <Exec Command="npx @tailwindcss/cli -i Styles/input.css -o wwwroot/tailwind.css --minify" WorkingDirectory="$(MSBuildProjectDirectory)" />
   </Target>
 
 </Project>

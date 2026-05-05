@@ -2,6 +2,7 @@ using TechNotes.Components;
 using TechNotes.Application;
 using TechNotes.Infrastructure;
 using TechNotes;
+using TechNotes.Features.Notes.Services;
 
 
 var builder = WebApplication.CreateBuilder(args);
@@ -12,6 +13,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddApplication();
 builder.Services.AddInfraestructure(builder.Configuration);
+builder.Services.AddScoped<INoteColorService, NoteColorService>();
 
 var app = builder.Build();
 
