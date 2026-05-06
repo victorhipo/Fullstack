@@ -26,3 +26,5 @@ artifacts/
 # OS generated files
 .DS_Store
 Thumbs.db
+#Tailwind CSS generate output
+TechNotes/wwwroot/tailwind.css
