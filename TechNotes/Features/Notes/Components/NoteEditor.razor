@@ -1,8 +1,10 @@
 ﻿@page "/note-editor"
 @page "/note-editor/{NoteId:int}"
+@attribute [Authorize]
 
 @inject ISender sender
 @inject NavigationManager NavigationManager
+@inject UserManager<User> UserManager;
 
 <div class="mx-auto max-w-2xl px-4 py-10">
 
@@ -115,6 +117,8 @@
 
     [Parameter]
     public int? NoteId { get; set; }
+    [CascadingParameter]
+    private HttpContext HttpContext {get; set;} = default!;
 
     protected override async Task OnParametersSetAsync()
     {
@@ -156,10 +160,12 @@
         else
         {
             var command = Note.Adapt<CreateNoteCommand>();
+            command.UserId = UserManager.GetUserId(HttpContext.User);
             var result = await sender.Send(command);
             if (result.IsSuccessful)
             {
                 Note = result.Adapt<NoteModel>();
+                NavigationManager.NavigateTo("/notes");
             }
             else
             {
