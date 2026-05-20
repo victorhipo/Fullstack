@@ -1,9 +1,12 @@
 ﻿@using Mapster
 @using MediatR
+@using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Components.Authorization
 @using Microsoft.AspNetCore.Components.Forms
 @using Microsoft.AspNetCore.Components.Routing
 @using Microsoft.AspNetCore.Components.Web
 @using Microsoft.AspNetCore.Components.Web.Virtualization
+@using Microsoft.AspNetCore.Identity
 @using Microsoft.JSInterop
 @using static Microsoft.AspNetCore.Components.Web.RenderMode
 @using System.Net.Http
@@ -15,7 +18,10 @@
 @using TechNotes.Application.Notes.GetNoteById
 @using TechNotes.Application.Notes.GetNotes
 @using TechNotes.Application.Notes.UpdateNote
+@using TechNotes.Application.Users.LoginUser
+@using TechNotes.Application.Users.RegisterUser
 @using TechNotes.Components
 @using TechNotes.Components.Pages
 @using TechNotes.domain.Notes
 @using TechNotes.Features.Notes.Services
+@using TechNotes.Infrastructure.Authetication

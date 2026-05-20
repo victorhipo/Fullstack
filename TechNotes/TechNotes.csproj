@@ -8,11 +8,17 @@
 
     <ItemGroup>
     <Folder Include="Features\Notes\Services\" />
+    <Folder Include="Features\Users\" />
+    <Folder Include="Features\Users\Components\" />
     <Folder Include="Notes\" />
   </ItemGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\TechNotes.Infrastructure\TechNotes.Infrastructure.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="8.0.20" />
     </ItemGroup>
 
 

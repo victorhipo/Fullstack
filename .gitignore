@@ -28,3 +28,7 @@ artifacts/
 Thumbs.db
 #Tailwind CSS generate output
 TechNotes/wwwroot/tailwind.css
+
+# Local secrets - never commit real credentials
+**/appsettings.Development.json
+**/appsettings.local.json

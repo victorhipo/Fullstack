@@ -1,8 +1,14 @@
 using System;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Components.Authorization;
+using Microsoft.AspNetCore.Components.Server;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TechNotes.domain.Notes;
+using TechNotes.domain.User;
+using TechNotes.Infrastructure.Authetication;
 using TechNotes.Infrastructure.Repositories;
 
 namespace TechNotes.Infrastructure;
@@ -18,6 +24,22 @@ public static class DependencyInjection
             )
         );
         services.AddScoped<INoteRepository, NoteRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
+        AddAuthentication(services);
         return services;
+    }
+    private static void AddAuthentication(IServiceCollection services)
+    {
+        services.AddScoped<TechNotes.Application.Authentication.IAuthenticationService, TechNotes.Infrastructure.Authentication.AuthenticationService>();
+        services.AddScoped<AuthenticationStateProvider,ServerAuthenticationStateProvider>();
+        services.AddCascadingAuthenticationState();
+        services.AddAuthorization();
+        services.AddAuthentication( options =>
+        {
+            options.DefaultScheme = IdentityConstants.ApplicationScheme;
+            options.DefaultChallengeScheme = IdentityConstants.ExternalScheme;
+            
+        }).AddIdentityCookies();
+        services.AddIdentityCore<User>().AddEntityFrameworkStores<ApplicationDbContext>().AddSignInManager().AddDefaultTokenProviders();
     }
 }
