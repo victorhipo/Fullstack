@@ -22,4 +22,9 @@
     <Folder Include="Repositories\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TechNotes.domain\TechNotes.domain.csproj" />
+    <ProjectReference Include="..\TechNotes.Application\TechNotes.Application.csproj" />
+  </ItemGroup>
+
 </Project>
