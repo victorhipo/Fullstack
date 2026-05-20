@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TechNotes.domain.Notes;
+using TechNotes.domain.User;
 using TechNotes.Infrastructure.Authetication;
 using TechNotes.Infrastructure.Repositories;
 
@@ -23,6 +24,7 @@ public static class DependencyInjection
             )
         );
         services.AddScoped<INoteRepository, NoteRepository>();
+        services.AddScoped<IUserRepository, UserRepository>();
         AddAuthentication(services);
         return services;
     }
